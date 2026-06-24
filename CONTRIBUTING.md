@@ -120,6 +120,11 @@ Instruções para entrar na comunidade.
 `community` `discord` `backend`
 ```
 
+**⚠️ IMPORTANTE para comunidades no Discord:**
+- Use links de convite **SEM EXPIRAÇÃO**
+- Configure o link para "Nunca Expirar" nas configurações do Discord
+- Isso evita que o link fique inválido e inutilize o recurso
+
 ### 5. Commit e Push
 
 ```bash
