@@ -1,0 +1,19 @@
+company: Fake Startup XYZ
+title: Build a Complete Social Network MVP
+technologies:
+  - React
+  - Node.js
+  - PostgreSQL
+  - Docker
+estimated_hours: 40
+requested_deliverables:
+  - Full featured MVP
+  - Deployment on AWS
+  - Complete documentation
+  - Mobile responsive design
+url: https://example.com/test-tecnico-fake
+status: active
+description: |
+  Oferecido como "desafio técnico" mas solicita um MVP completo de aplicação
+  social. 40 horas de trabalho sem compensação. Empresa raramente retorna
+  feedback ou contrata após conclusão.

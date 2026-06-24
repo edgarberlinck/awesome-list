@@ -1,0 +1,13 @@
+title: Refactoring
+author: Martin Fowler
+year: 2018
+language: English
+difficulty: Intermediate
+topics:
+  - refactoring
+  - code-quality
+  - best-practices
+link: https://www.oreilly.com/library/view/refactoring-improving-the/9780134757599/
+description: |
+  Guia prático sobre como melhorar código existente de forma segura.
+  Exemplos em JavaScript e cobertura de técnicas modernas.

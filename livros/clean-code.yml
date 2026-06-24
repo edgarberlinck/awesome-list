@@ -1,0 +1,14 @@
+title: Clean Code
+author: Robert C. Martin
+year: 2008
+language: English
+difficulty: Intermediate
+topics:
+  - software-engineering
+  - clean-code
+  - best-practices
+link: https://www.oreilly.com/library/view/clean-code-a/9780136083238/
+description: |
+  Um clássico essencial sobre como escrever código limpo, legível e manutenível.
+  Apresenta técnicas práticas e padrões de refatoração que todo desenvolvedor
+  deve conhecer.

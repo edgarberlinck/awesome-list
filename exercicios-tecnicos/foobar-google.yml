@@ -1,0 +1,14 @@
+title: FooBar by Google
+company: Google
+difficulty: Hard
+technologies:
+  - Python
+  - Algorithm
+  - Graph Theory
+estimated_time: 4-6 hours
+source: recruiter
+url: https://foobar.withgoogle.com
+description: |
+  Desafio secreto do Google com problemas complexos de algoritmos.
+  Normalmente mais difícil que entrevistas padrão. Recomendado para
+  preparação de FAANG.

@@ -1,0 +1,13 @@
+title: Design Patterns
+author: Gang of Four (Gamma, Helm, Johnson, Vlissides)
+year: 1994
+language: English
+difficulty: Advanced
+topics:
+  - design-patterns
+  - object-oriented-design
+  - architecture
+link: https://www.oreilly.com/library/view/design-patterns-elements/0201633612/
+description: |
+  O livro que definiu padrões de design em programação orientada a objetos.
+  Fundamental para arquitetos e sêniors. Denso mas essencial.
