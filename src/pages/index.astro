@@ -3,11 +3,36 @@ import fs from 'fs';
 import path from 'path';
 
 const categories = [
-  { slug: 'livros', title: '📖 Livros', icon: '📖' },
-  { slug: 'comunidades', title: '👥 Comunidades', icon: '👥' },
-  { slug: 'exercicios-tecnicos', title: '💪 Exercícios Técnicos', icon: '💪' },
-  { slug: 'freelas-disfarcados', title: '🎭 Freelas Disfarçados', icon: '🎭' },
-  { slug: 'newsletters', title: '📬 Newsletters', icon: '📬' },
+  { 
+    slug: 'livros', 
+    title: '📖 Livros', 
+    icon: '📖',
+    description: 'Referências essenciais para crescimento técnico'
+  },
+  { 
+    slug: 'comunidades', 
+    title: '👥 Comunidades', 
+    icon: '👥',
+    description: 'Conecte-se com outros devs e aprenda junto'
+  },
+  { 
+    slug: 'exercicios-tecnicos', 
+    title: '💪 Exercícios Técnicos', 
+    icon: '💪',
+    description: 'Desafios de código para treinar suas skills'
+  },
+  { 
+    slug: 'freelas-disfarcados', 
+    title: '🎭 Freelas Disfarçados', 
+    icon: '🎭',
+    description: 'Testes técnicos que pedem trabalho de graça'
+  },
+  { 
+    slug: 'newsletters', 
+    title: '📬 Newsletters', 
+    icon: '📬',
+    description: 'Conteúdo de qualidade direto no seu email'
+  },
 ];
 
 const base = import.meta.env.BASE_URL;
@@ -141,6 +166,12 @@ function getResourceCount(categorySlug: string): number {
       margin-bottom: 1rem;
       color: #1a202c;
     }
+    .category-description {
+      font-size: 0.95rem;
+      color: #718096;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
     .category-count {
       color: #718096;
       font-size: 1rem;
@@ -209,6 +240,7 @@ function getResourceCount(categorySlug: string): number {
         <a href={`${base}/${cat.slug}/`} class="category-card">
           <span class="category-icon">{cat.icon}</span>
           <div class="category-title">{cat.title}</div>
+          <div class="category-description">{cat.description}</div>
           <div class="category-count">{getResourceCount(cat.slug)} recursos</div>
           <span class="badge">Explorar</span>
         </a>
