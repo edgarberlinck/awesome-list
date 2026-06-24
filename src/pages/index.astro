@@ -10,6 +10,8 @@ const categories = [
   { slug: 'newsletters', title: '📬 Newsletters', icon: '📬' },
 ];
 
+const base = import.meta.env.BASE_URL;
+
 function getResourceCount(categorySlug: string): number {
   const categoryPath = path.join(process.cwd(), categorySlug);
   if (!fs.existsSync(categoryPath)) return 0;
@@ -204,7 +206,7 @@ function getResourceCount(categorySlug: string): number {
   <div class="container">
     <div class="categories">
       {categories.map(cat => (
-        <a href={`/${cat.slug}`} class="category-card">
+        <a href={`${base}/${cat.slug}/`} class="category-card">
           <span class="category-icon">{cat.icon}</span>
           <div class="category-title">{cat.title}</div>
           <div class="category-count">{getResourceCount(cat.slug)} recursos</div>

@@ -14,6 +14,7 @@ export async function getStaticPaths() {
 }
 
 const { category } = Astro.params;
+const base = import.meta.env.BASE_URL;
 
 const categoryConfig: Record<string, any> = {
   'livros': {
@@ -288,7 +289,7 @@ const resources = loadResources();
 <body>
   <div class="header">
     <div class="header-content">
-      <a href="/" class="back-link">← Voltar</a>
+      <a href={base} class="back-link">← Voltar</a>
       
       <h1>{config.title}</h1>
       <p class="description">{config.description}</p>
