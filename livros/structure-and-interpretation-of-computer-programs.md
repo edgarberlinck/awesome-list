@@ -17,9 +17,13 @@ princípios fundamentais da programação através da construção gradual de
 abstrações cada vez mais sofisticadas.
 
 Aborda temas como recursão, interpretação, compilação, sistemas de tipos,
-linguagens de programação e modelos computacionais, incentivando o leitor a
+linguagens de programação e modelos computacionais.
 pensar sobre a natureza da computação em vez de apenas aprender uma linguagem
 específica.
 
 Embora exigente, continua sendo uma referência clássica para quem deseja
 aprofundar sua compreensão dos fundamentos da programação.
+
+## Tags
+
+`computer-science` `functional-programming` `programming-languages` `fundamentals`

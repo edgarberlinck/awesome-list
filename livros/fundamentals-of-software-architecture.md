@@ -13,3 +13,7 @@
 ## Descrição
 
 Introdução moderna aos fundamentos da arquitetura de software.
+
+## Tags
+
+`architecture` `software-design` `software-engineering`

@@ -13,3 +13,7 @@
 ## Descrição
 
 Referência moderna para liderança e gestão em engenharia de software.
+
+## Tags
+
+`leadership` `management` `software-engineering`

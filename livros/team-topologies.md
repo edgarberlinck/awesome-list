@@ -18,3 +18,7 @@ aumentar a velocidade de entrega e diminuir a carga cognitiva dos times.
 Introduz conceitos como Stream-Aligned Teams, Platform Teams, Enabling Teams
 e Complicated Subsystem Teams, oferecendo uma abordagem prática para alinhar
 arquitetura de software e estrutura organizacional.
+
+## Tags
+
+`teams` `devops` `organization` `architecture`

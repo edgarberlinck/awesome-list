@@ -17,3 +17,7 @@ testáveis e independentes de frameworks, bancos de dados e interfaces.
 
 Explora conceitos como separação de responsabilidades, inversão de dependência
 e organização de sistemas complexos ao longo do tempo.
+
+## Tags
+
+`architecture` `software-engineering` `design`

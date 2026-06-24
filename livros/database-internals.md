@@ -21,3 +21,7 @@ outros conceitos fundamentais presentes em sistemas de banco de dados modernos.
 
 Leitura recomendada para desenvolvedores que desejam compreender o que acontece
 além das consultas SQL e tomar decisões arquiteturais mais fundamentadas.
+
+## Tags
+
+`databases` `storage-engines` `indexing` `internals`

@@ -22,3 +22,7 @@ de DevOps, fluxo de trabalho, gestão de incidentes e melhoria contínua.
 É frequentemente recomendado como porta de entrada para profissionais que
 desejam compreender a relação entre tecnologia, operações e negócio sem
 mergulhar imediatamente em livros mais técnicos.
+
+## Tags
+
+`devops` `operations` `management` `software-delivery`

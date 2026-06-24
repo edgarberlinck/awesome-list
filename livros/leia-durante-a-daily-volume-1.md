@@ -22,3 +22,7 @@ enfrentados por profissionais da área.
 Escrito a partir da perspectiva de alguém que viveu o ambiente de engenharia
 na prática, combina relatos, críticas e aprendizados adquiridos durante anos
 de atuação no setor.
+
+## Tags
+
+`software-engineering` `career` `workplace` `technology`

@@ -13,3 +13,7 @@
 ## Descrição
 
 Uma das obras que ajudou a consolidar os conceitos modernos de entrega contínua e automação de deploys.
+
+## Tags
+
+`devops` `ci-cd` `deployment` `software-delivery`

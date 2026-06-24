@@ -21,3 +21,7 @@ sempre sob a ótica de quem desenvolve software.
 
 É uma das melhores obras para desenvolvedores que desejam compreender o que
 acontece abaixo da camada de linguagens de alto nível e frameworks.
+
+## Tags
+
+`computer-systems` `operating-systems` `memory` `performance`

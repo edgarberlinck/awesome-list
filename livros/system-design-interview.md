@@ -22,3 +22,7 @@ explicando os trade-offs envolvidos em cada solução.
 Embora seja frequentemente utilizado para preparação de entrevistas, o livro
 também serve como uma excelente introdução ao raciocínio arquitetural em larga
 escala.
+
+## Tags
+
+`system-design` `scalability` `architecture` `interviews`

@@ -18,3 +18,7 @@ eficiente e manutenível.
 Organizado em itens independentes, o livro aborda desde fundamentos da linguagem
 até temas avançados como concorrência, generics, coleções e design de APIs,
 sendo considerado leitura obrigatória para desenvolvedores Java.
+
+## Tags
+
+`java` `best-practices` `object-oriented` `programming`

@@ -13,3 +13,7 @@
 ## Descrição
 
 Clássico sobre produtividade, equipes e ambiente de trabalho em software.
+
+## Tags
+
+`teams` `management` `productivity`

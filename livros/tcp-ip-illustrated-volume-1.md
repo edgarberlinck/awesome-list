@@ -25,3 +25,7 @@ demonstrar como a comunicação ocorre na prática.
 Embora algumas tecnologias tenham evoluído desde sua publicação original,
 continua sendo uma das melhores referências para compreender profundamente
 o comportamento das redes TCP/IP.
+
+## Tags
+
+`networking` `tcp-ip` `protocols` `internet`

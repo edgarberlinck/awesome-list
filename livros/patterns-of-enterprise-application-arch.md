@@ -18,3 +18,7 @@ persistência, lógica de negócio, transações e organização de sistemas com
 
 Embora muitos exemplos reflitam tecnologias da época, os conceitos continuam
 relevantes e influenciam frameworks e arquiteturas modernas.
+
+## Tags
+
+`enterprise` `architecture` `patterns` `software-design`

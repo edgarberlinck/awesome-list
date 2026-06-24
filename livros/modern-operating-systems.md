@@ -25,3 +25,7 @@ utilizando exemplos reais de sistemas operacionais amplamente utilizados.
 
 Além da teoria, oferece uma visão prática sobre as decisões de design que
 impactam desempenho, confiabilidade e manutenção de sistemas complexos.
+
+## Tags
+
+`operating-systems` `kernels` `concurrency` `computer-science`

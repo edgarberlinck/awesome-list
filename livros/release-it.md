@@ -18,3 +18,7 @@ enfrentar usuários reais, cargas imprevisíveis e falhas inesperadas.
 Apresenta padrões e estratégias para aumentar a resiliência, disponibilidade
 e estabilidade de aplicações em produção, abordando temas como circuit breakers,
 timeouts, monitoramento e degradação controlada de serviços.
+
+## Tags
+
+`reliability` `production` `scalability` `operations`

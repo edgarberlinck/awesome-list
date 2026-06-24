@@ -22,3 +22,7 @@ e prática da área.
 Recomendado tanto para engenheiros de dados quanto para desenvolvedores e
 arquitetos que desejam compreender melhor os desafios de sistemas orientados
 a dados.
+
+## Tags
+
+`data-engineering` `data-platforms` `analytics` `pipelines`

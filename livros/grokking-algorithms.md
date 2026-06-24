@@ -13,3 +13,7 @@
 ## Descrição
 
 Introdução visual e acessível a algoritmos e estruturas de dados.
+
+## Tags
+
+`algorithms` `data-structures` `computer-science`

@@ -13,3 +13,7 @@
 ## Descrição
 
 Catálogo de padrões e antipadrões para testes automatizados.
+
+## Tags
+
+`testing` `unit-testing` `patterns`

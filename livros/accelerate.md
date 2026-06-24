@@ -17,5 +17,8 @@ o livro investiga quais práticas realmente contribuem para equipes de
 engenharia mais eficazes.
 
 Apresenta métricas e evidências que conectam práticas técnicas,
-cultura organizacional e resultados de negócio, tornando-se uma das
-principais referências modernas em DevOps e entrega contínua.
+cultura organizacional e resultados de negócio, tornando-se uma das referências mais importantes sobre performance em engenharia de software.
+
+## Tags
+
+`devops` `delivery` `engineering-management` `metrics`

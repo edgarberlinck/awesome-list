@@ -22,3 +22,7 @@ complexidade e algoritmos probabilísticos.
 Amplamente utilizado em universidades e programas de ciência da computação,
 sendo uma obra de referência para quem deseja compreender algoritmos de forma
 profunda e rigorosa.
+
+## Tags
+
+`algorithms` `data-structures` `computer-science` `fundamentals`

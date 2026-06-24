@@ -22,3 +22,7 @@ arquitetura distribuída cresce ao longo do tempo.
 O livro combina fundamentos arquiteturais com experiências reais de mercado,
 ajudando equipes a compreender tanto os benefícios quanto os custos associados
 à adoção de microsserviços.
+
+## Tags
+
+`microservices` `architecture` `distributed-systems` `scalability`

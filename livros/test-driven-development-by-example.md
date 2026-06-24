@@ -13,3 +13,7 @@
 ## Descrição
 
 Livro que popularizou o TDD moderno.
+
+## Tags
+
+`testing` `tdd` `software-engineering`

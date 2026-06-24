@@ -24,3 +24,7 @@ infraestrutura e tecnologias que sustentam a Internet.
 
 Aborda HTTP, DNS, TCP, UDP, roteamento, segurança, redes sem fio e diversos
 outros temas essenciais para compreender como sistemas distribuídos se comunicam.
+
+## Tags
+
+`networking` `internet` `protocols` `distributed-systems`

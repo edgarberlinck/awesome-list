@@ -15,3 +15,7 @@
 Obra fundamental para compreender modelagem de domínios complexos.
 Introduz conceitos como Ubiquitous Language, Bounded Contexts e
 agregados que influenciaram profundamente a arquitetura de software moderna.
+
+## Tags
+
+`domain-driven-design` `architecture` `modeling` `software-engineering`

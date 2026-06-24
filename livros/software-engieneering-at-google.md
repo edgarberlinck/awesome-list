@@ -17,5 +17,8 @@ e manter sistemas em larga escala.
 
 Aborda temas como revisão de código, testes, gerenciamento de dependências,
 manutenibilidade e sustentabilidade de software ao longo dos anos, com foco
-em princípios que permanecem relevantes independentemente das tecnologias
-utilizadas.
+em princípios que permanecem relevantes independentemente das tecnologias.
+
+## Tags
+
+`software-engineering` `scalability` `testing` `engineering-culture`

@@ -21,3 +21,7 @@ entrega e confiabilidade.
 
 Uma referência fundamental para engenheiros de plataforma, DevOps e profissionais
 responsáveis por manter sistemas críticos funcionando de forma estável e eficiente.
+
+## Tags
+
+`sre` `reliability` `operations` `scalability`

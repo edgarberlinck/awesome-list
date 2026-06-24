@@ -14,3 +14,7 @@
 
 Referência essencial para quem precisa modificar sistemas antigos com segurança.
 Foca em estratégias para introduzir testes e reduzir riscos durante mudanças.
+
+## Tags
+
+`legacy-code` `testing` `maintenance`

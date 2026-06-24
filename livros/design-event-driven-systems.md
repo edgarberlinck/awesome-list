@@ -21,3 +21,7 @@ discussões sobre os desafios desse estilo arquitetural.
 
 Leitura recomendada para arquitetos e desenvolvedores que trabalham com
 sistemas distribuídos modernos e plataformas de streaming de dados.
+
+## Tags
+
+`event-driven-architecture` `distributed-systems` `streaming` `architecture`

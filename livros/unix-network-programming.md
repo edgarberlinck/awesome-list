@@ -26,3 +26,7 @@ desempenho que dependem de comunicação distribuída.
 Embora exija familiaridade com programação em C e conceitos de sistemas
 operacionais, continua sendo uma referência clássica para engenheiros que
 desejam compreender redes em um nível mais profundo.
+
+## Tags
+
+`networking` `unix` `sockets` `systems-programming`

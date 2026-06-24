@@ -17,9 +17,13 @@ Conhecido por muitos estudantes simplesmente como "O Livro do Dinossauro",
 
 Aborda conceitos fundamentais como processos, threads, escalonamento,
 sincronização, gerenciamento de memória, sistemas de arquivos, segurança e
-virtualização, explicando como sistemas operacionais modernos funcionam
+virtualização, explicando como sistemas operacionais modernos funcionam.
 internamente.
 
 É amplamente utilizado em cursos universitários e continua sendo uma das
 melhores portas de entrada para quem deseja compreender a camada que existe
 entre o hardware e as aplicações.
+
+## Tags
+
+`operating-systems` `concurrency` `memory-management` `computer-science`

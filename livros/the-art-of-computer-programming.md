@@ -17,9 +17,13 @@ apresenta um estudo profundo sobre algoritmos, estruturas de dados e análise
 matemática aplicada à programação.
 
 A coleção aborda temas como algoritmos fundamentais, busca, ordenação,
-combinatória, geração de números aleatórios e teoria computacional com um
+combinatorória, geração de números aleatórios e teoria computacional.
 nível de rigor raro mesmo em ambientes acadêmicos.
 
 Embora não seja uma leitura casual, continua sendo uma referência para
 pesquisadores, cientistas da computação e profissionais interessados nos
 fundamentos mais profundos da área.
+
+## Tags
+
+`algorithms` `computer-science` `mathematics` `programming`

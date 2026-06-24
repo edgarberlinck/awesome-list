@@ -14,3 +14,7 @@
 
 Guia abrangente sobre construção de software profissional.
 Aborda desde organização de código até revisão, manutenção e qualidade.
+
+## Tags
+
+`software-construction` `best-practices` `software-engineering`

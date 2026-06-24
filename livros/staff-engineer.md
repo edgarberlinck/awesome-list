@@ -13,3 +13,7 @@
 ## Descrição
 
 Guia sobre crescimento técnico além da senioridade tradicional.
+
+## Tags
+
+`career` `leadership` `software-engineering`

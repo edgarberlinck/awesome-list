@@ -13,3 +13,7 @@
 ## Descrição
 
 Discussão profunda sobre gerenciamento de complexidade em software.
+
+## Tags
+
+`software-design` `complexity` `architecture`
