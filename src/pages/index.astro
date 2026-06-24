@@ -7,31 +7,31 @@ const categories = [
     slug: 'livros', 
     title: '📖 Livros', 
     icon: '📖',
-    description: 'Referências essenciais para crescimento técnico'
+    description: 'Conhecimento de verdade está nos livros! Indique aqui bons livros.'
   },
   { 
     slug: 'comunidades', 
     title: '👥 Comunidades', 
     icon: '👥',
-    description: 'Conecte-se com outros devs e aprenda junto'
+    description: 'Às vezes é importante fazer um pequeno esforço e falar com outras pessoas. Sim, eu também não gosto, mas é importante.'
   },
   { 
     slug: 'exercicios-tecnicos', 
     title: '💪 Exercícios Técnicos', 
     icon: '💪',
-    description: 'Desafios de código para treinar suas skills'
+    description: 'Aqueles desafios de código que as empresas mandam você fazer. Alguns são legais, outros... bom, você vai ver.'
   },
   { 
     slug: 'freelas-disfarcados', 
     title: '🎭 Freelas Disfarçados', 
     icon: '🎭',
-    description: 'Testes técnicos que pedem trabalho de graça'
+    description: 'Passou uma semana fazendo um teste técnico e levou um ghosting ou aquele email frio do RH? Depois disso caiu a ficha que você na verdade trabalhou de graça? Quem nunca... Lave a alma aqui!'
   },
   { 
     slug: 'newsletters', 
     title: '📬 Newsletters', 
     icon: '📬',
-    description: 'Conteúdo de qualidade direto no seu email'
+    description: 'Conteúdo direto no seu email. Melhor que ficar rolando feed infinito no LinkedIn, eu acho.'
   },
 ];
 
@@ -167,10 +167,11 @@ function getResourceCount(categorySlug: string): number {
       color: #1a202c;
     }
     .category-description {
-      font-size: 0.95rem;
-      color: #718096;
+      font-size: 1rem;
+      color: #4a5568;
       margin-bottom: 1.5rem;
-      line-height: 1.5;
+      line-height: 1.6;
+      min-height: 80px;
     }
     .category-count {
       color: #718096;
