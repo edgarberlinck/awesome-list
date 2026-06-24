@@ -1,28 +1,31 @@
 # Tech Resources Hub 🚀
 
 [![Validate](https://github.com/edgarberlinck/awesome-list/actions/workflows/validate.yml/badge.svg)](https://github.com/edgarberlinck/awesome-list/actions/workflows/validate.yml)
-[![Generate Docs](https://github.com/edgarberlinck/awesome-list/actions/workflows/generate-docs.yml/badge.svg)](https://github.com/edgarberlinck/awesome-list/actions/workflows/generate-docs.yml)
 
 Uma coleção curada de recursos tecnológicos para desenvolvedores em busca de aprendizado, comunidade e oportunidades.
 
 ## 📚 Categorias Disponíveis
 
 ### [📖 Livros](/livros)
+
 Referências essenciais em desenvolvimento de software, arquitetura e melhores práticas.
 
 **Estatísticas:** 5 livros | 4 idiomas
 
 ### [👥 Comunidades](/comunidades)
+
 Espaços para networking, aprendizado colaborativo e troca de experiências.
 
 **Estatísticas:** 5 comunidades | 3 plataformas
 
 ### [💪 Exercícios Técnicos](/exercicios-tecnicos)
+
 Desafios de programação propostos por empresas para treinar habilidades.
 
 **Estatísticas:** 5 exercícios | 8 tecnologias
 
 ### [🎭 Freelas Disfarçados](/freelas-disfarcados)
+
 Testes técnicos que parecem desafios mas solicitam trabalho real sem compensação.
 
 **Estatísticas:** 3 casos documentados | Status: ativo/removido
@@ -39,6 +42,7 @@ Este projeto documenta e organiza recursos tecnológicos para ajudar:
 ## 🤝 Como Contribuir
 
 Consulte [CONTRIBUTING.md](CONTRIBUTING.md) para:
+
 - Como adicionar novos recursos
 - Formato esperado dos metadados
 - Processo de revisão

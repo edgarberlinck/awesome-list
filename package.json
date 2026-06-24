@@ -6,15 +6,14 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "validate": "node scripts/validate.js",
-    "check-links": "node scripts/link-check.js",
-    "generate": "node scripts/generate-readmes.js"
+    "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^7.2.0",
     "@astrojs/node": "^11.0.0",
     "astro": "^7.0.2",
     "gray-matter": "^4.0.3",
-    "js-yaml": "^5.1.0"
+    "js-yaml": "^5.1.0",
+    "marked": "^18.0.5"
   }
 }

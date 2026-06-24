@@ -1,5 +1,4 @@
 ---
-import * as yaml from 'js-yaml';
 import fs from 'fs';
 import path from 'path';
 
@@ -13,7 +12,7 @@ const categories = [
 function getResourceCount(categorySlug: string): number {
   const categoryPath = path.join(process.cwd(), categorySlug);
   if (!fs.existsSync(categoryPath)) return 0;
-  return fs.readdirSync(categoryPath).filter(f => f.endsWith('.yml')).length;
+  return fs.readdirSync(categoryPath).filter(f => f.endsWith('.md') && f !== 'README.md').length;
 }
 ---
 

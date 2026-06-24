@@ -34,18 +34,6 @@ npm run preview
 ```
 Testa o build de produção localmente
 
-### Validar YAML
-```bash
-npm run validate
-```
-Valida todos os arquivos .yml das categorias
-
-### Verificar Links
-```bash
-npm run check-links
-```
-Verifica se todos os links estão funcionando
-
 ## Estrutura do Projeto
 
 ```
@@ -54,32 +42,58 @@ awesome-list/
 │   └── pages/
 │       ├── index.astro          # Página inicial
 │       └── [category].astro     # Páginas de categoria
-├── livros/                      # YAML dos livros
-├── comunidades/                 # YAML das comunidades
-├── exercicios-tecnicos/         # YAML dos exercícios
-├── freelas-disfarcados/         # YAML dos freelas
+├── livros/                      # Markdown dos livros
+├── comunidades/                 # Markdown das comunidades
+├── exercicios-tecnicos/         # Markdown dos exercícios
+├── freelas-disfarcados/         # Markdown dos freelas
 ├── astro.config.mjs             # Configuração Astro
 └── package.json
 ```
 
 ## Adicionar Novo Recurso
 
-1. Crie um arquivo `.yml` na pasta da categoria
-2. Preencha os campos obrigatórios
-3. Execute `npm run validate` para verificar
-4. Commit e push
+1. Crie um arquivo `.md` na pasta da categoria
+2. Escreva o conteúdo em Markdown (formato livre!)
+3. Commit e push
+4. GitHub Actions faz o deploy automaticamente
 
-Exemplo para livros (`livros/meu-livro.yml`):
-```yaml
-title: Nome do Livro
-author: Autor
-year: 2024
-language: Portuguese
-difficulty: Intermediate
-link: https://example.com
-description: |
-  Descrição do livro
+### Exemplo: `livros/meu-livro.md`
+
+```markdown
+# Nome do Livro
+
+**Autor:** Nome do Autor  
+**Ano:** 2024  
+**Linguagem:** Portuguese  
+**Dificuldade:** Intermediate
+
+## Descrição
+
+Breve descrição do livro e por que vale a pena ler.
+
+## Por que ler?
+
+- Ponto interessante 1
+- Ponto interessante 2
+- Ponto interessante 3
+
+## Links
+
+- [Comprar na Amazon](https://amazon.com/...)
+- [Site oficial](https://example.com)
+
+## Tags
+
+`programming` `design-patterns` `best-practices`
 ```
+
+## Vantagens do Markdown
+
+✅ **Liberdade total** - Escreva o conteúdo como quiser  
+✅ **Rica formatação** - Headers, listas, links, código, etc  
+✅ **Simples** - Qualquer um sabe editar  
+✅ **Flexível** - Cada recurso pode ter estrutura diferente  
+✅ **Preview** - GitHub mostra renderizado automaticamente
 
 ## Troubleshooting
 

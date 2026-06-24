@@ -1,7 +1,7 @@
 ---
-import * as yaml from 'js-yaml';
 import fs from 'fs';
 import path from 'path';
+import { marked } from 'marked';
 
 export async function getStaticPaths() {
   return [
@@ -18,26 +18,18 @@ const categoryConfig: Record<string, any> = {
   'livros': {
     title: '📖 Livros',
     description: 'Referências essenciais em desenvolvimento de software',
-    fields: ['title', 'author', 'year', 'language', 'difficulty'],
-    labels: ['Título', 'Autor', 'Ano', 'Linguagem', 'Dificuldade'],
   },
   'comunidades': {
     title: '👥 Comunidades',
     description: 'Espaços para networking e aprendizado colaborativo',
-    fields: ['name', 'platform', 'language', 'focus'],
-    labels: ['Nome', 'Plataforma', 'Linguagem', 'Foco'],
   },
   'exercicios-tecnicos': {
     title: '💪 Exercícios Técnicos',
     description: 'Desafios de programação propostos por empresas',
-    fields: ['title', 'company', 'difficulty', 'technologies'],
-    labels: ['Título', 'Empresa', 'Dificuldade', 'Tecnologias'],
   },
   'freelas-disfarcados': {
     title: '🎭 Freelas Disfarçados',
     description: 'Testes que parecem desafios mas solicitam trabalho real',
-    fields: ['company', 'title', 'technologies', 'status'],
-    labels: ['Empresa', 'Título', 'Tecnologias', 'Status'],
   },
 };
 
@@ -47,24 +39,29 @@ function loadResources() {
   const categoryPath = path.join(process.cwd(), category!);
   if (!fs.existsSync(categoryPath)) return [];
   
-  const files = fs.readdirSync(categoryPath).filter(f => f.endsWith('.yml'));
+  const files = fs.readdirSync(categoryPath).filter(f => f.endsWith('.md') && f !== 'README.md');
   
   return files.map(file => {
-    const content = fs.readFileSync(path.join(categoryPath, file), 'utf-8');
-    return yaml.load(content);
-  }).sort((a: any, b: any) => {
-    const aTitle = a.title || a.name || a.company || '';
-    const bTitle = b.title || b.name || b.company || '';
-    return aTitle.localeCompare(bTitle);
-  });
+    const filePath = path.join(categoryPath, file);
+    const content = fs.readFileSync(filePath, 'utf-8');
+    
+    // Extract title from first # heading
+    const titleMatch = content.match(/^#\s+(.+)$/m);
+    const title = titleMatch ? titleMatch[1] : file.replace('.md', '');
+    
+    // Remove title from content and parse markdown
+    const contentWithoutTitle = content.replace(/^#\s+.+$/m, '').trim();
+    const html = marked(contentWithoutTitle);
+    
+    return {
+      slug: file.replace('.md', ''),
+      title,
+      html,
+    };
+  }).sort((a, b) => a.title.localeCompare(b.title));
 }
 
 const resources = loadResources();
-
-function formatValue(value: any): string {
-  if (Array.isArray(value)) return value.join(', ');
-  return String(value || '-');
-}
 ---
 
 <!DOCTYPE html>
@@ -125,30 +122,61 @@ function formatValue(value: any): string {
       margin-bottom: 2rem;
       font-weight: 500;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
       margin-top: 2rem;
     }
-    th {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 1rem;
-      text-align: left;
+    .resource-card {
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    .resource-card:hover {
+      border-color: #667eea;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+      transform: translateY(-2px);
+    }
+    .resource-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #667eea;
+    }
+    .resource-content {
+      color: #4b5563;
+      line-height: 1.6;
+    }
+    .resource-content h2 {
+      font-size: 1rem;
       font-weight: 600;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: #1f2937;
     }
-    th:first-child {
-      border-radius: 10px 0 0 0;
+    .resource-content p {
+      margin-bottom: 0.75rem;
     }
-    th:last-child {
-      border-radius: 0 10px 0 0;
+    .resource-content ul {
+      margin-left: 1.5rem;
+      margin-bottom: 0.75rem;
     }
-    td {
-      padding: 1rem;
-      border-bottom: 1px solid #eee;
+    .resource-content a {
+      color: #667eea;
+      text-decoration: none;
     }
-    tr:hover {
-      background: #f9fafb;
+    .resource-content a:hover {
+      text-decoration: underline;
+    }
+    .resource-content code {
+      background: #f3f4f6;
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.25rem;
+      font-size: 0.875em;
+      color: #764ba2;
     }
     .no-resources {
       text-align: center;
@@ -174,24 +202,14 @@ function formatValue(value: any): string {
         Nenhum recurso adicionado ainda. Seja o primeiro a contribuir!
       </div>
     ) : (
-      <table>
-        <thead>
-          <tr>
-            {config.labels.map((label: string) => (
-              <th>{label}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {resources.map((resource: any) => (
-            <tr>
-              {config.fields.map((field: string) => (
-                <td>{formatValue(resource[field])}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div class="resources-grid">
+        {resources.map((resource) => (
+          <div class="resource-card">
+            <div class="resource-title">{resource.title}</div>
+            <div class="resource-content" set:html={resource.html} />
+          </div>
+        ))}
+      </div>
     )}
   </div>
 </body>
