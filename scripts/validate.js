@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import matter from 'gray-matter';
+import * as yaml from 'js-yaml';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, '..');
@@ -37,7 +37,7 @@ function isValidUrl(urlString) {
 function validateFile(filePath, category) {
   try {
     const content = fs.readFileSync(filePath, 'utf-8');
-    const { data } = matter(content);
+    const data = yaml.load(content);
 
     const required = categories[category].required;
     const missing = required.filter((field) => !data[field]);
