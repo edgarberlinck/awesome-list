@@ -29,104 +29,193 @@ function getResourceCount(categorySlug: string): number {
       box-sizing: border-box;
     }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       line-height: 1.6;
-      color: #333;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #1a202c;
+      background: #0f172a;
       min-height: 100vh;
-      padding: 2rem;
+      padding: 0;
     }
-    .container {
-      max-width: 1200px;
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.3;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
       margin: 0 auto;
-      background: white;
-      border-radius: 20px;
-      padding: 3rem;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
     h1 {
-      font-size: 3rem;
+      font-size: 4rem;
+      font-weight: 900;
       margin-bottom: 1rem;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: white;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      letter-spacing: -2px;
     }
     .subtitle {
-      font-size: 1.2rem;
-      color: #666;
-      margin-bottom: 3rem;
+      font-size: 1.5rem;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+    .stats-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      color: white;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .container {
+      max-width: 1400px;
+      margin: -3rem auto 0;
+      padding: 0 2rem 4rem;
+      position: relative;
+      z-index: 2;
     }
     .categories {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
     }
     .category-card {
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      border-radius: 15px;
-      padding: 2rem;
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
       text-decoration: none;
       color: inherit;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 2px solid transparent;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .category-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    .category-card:hover::before {
+      transform: scaleX(1);
     }
     .category-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
       border-color: #667eea;
     }
     .category-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      display: block;
+      filter: drop-shadow(0 4px 10px rgba(102, 126, 234, 0.3));
     }
     .category-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #1a202c;
     }
     .category-count {
-      color: #666;
-      font-size: 0.9rem;
+      color: #718096;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .category-count::before {
+      content: '📚';
+      font-size: 1.2rem;
     }
     .badge {
-      display: inline-block;
-      background: #667eea;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
       color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      margin-top: 1rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+    .badge::after {
+      content: '→';
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+    .category-card:hover .badge::after {
+      transform: translateX(5px);
     }
     footer {
-      margin-top: 3rem;
+      margin-top: 4rem;
       text-align: center;
-      color: #666;
-      padding-top: 2rem;
-      border-top: 1px solid #eee;
+      color: #a0aec0;
+      padding: 3rem 2rem;
+      background: #1a202c;
+      border-top: 1px solid #2d3748;
+    }
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+    footer a {
+      color: #667eea;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: #764ba2;
     }
   </style>
 </head>
 <body>
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Tech Resources Hub 🚀</h1>
+      <p class="subtitle">Recursos curados para desenvolvedores que querem evoluir</p>
+      <span class="stats-badge">✨ {categories.reduce((acc, cat) => acc + getResourceCount(cat.slug), 0)} recursos disponíveis</span>
+    </div>
+  </div>
+
   <div class="container">
-    <h1>Tech Resources Hub 🚀</h1>
-    <p class="subtitle">Uma coleção curada de recursos tecnológicos para desenvolvedores</p>
-    
     <div class="categories">
       {categories.map(cat => (
         <a href={`/${cat.slug}`} class="category-card">
-          <div class="category-icon">{cat.icon}</div>
+          <span class="category-icon">{cat.icon}</span>
           <div class="category-title">{cat.title}</div>
-          <div class="category-count">{getResourceCount(cat.slug)} recursos disponíveis</div>
-          <span class="badge">Ver recursos →</span>
+          <div class="category-count">{getResourceCount(cat.slug)} recursos</div>
+          <span class="badge">Explorar</span>
         </a>
       ))}
     </div>
-
-    <footer>
-      <p>MIT © 2024 Edgar Berlinck | Contribuições são bem-vindas!</p>
-    </footer>
   </div>
+
+  <footer>
+    <p><strong>Tech Resources Hub</strong> - Conhecimento compartilhado pela comunidade</p>
+    <p>MIT © 2024 | <a href="https://github.com/edgarberlinck/awesome-list" target="_blank">Contribua no GitHub</a></p>
+  </footer>
 </body>
 </html>
