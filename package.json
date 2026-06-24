@@ -1,0 +1,14 @@
+{
+  "name": "tech-resources-hub",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A curated list of tech resources",
+  "scripts": {
+    "validate": "node scripts/validate.js",
+    "check-links": "node scripts/link-check.js",
+    "generate": "node scripts/generate-readmes.js"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}
