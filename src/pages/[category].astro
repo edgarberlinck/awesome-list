@@ -55,6 +55,10 @@ function loadResources() {
     const titleMatch = content.match(/^#\s+(.+)$/m);
     const title = titleMatch ? titleMatch[1] : file.replace('.md', '');
     
+    // Extract tags from content (looking for `tag` format)
+    const tagsMatch = content.match(/`([^`]+)`/g);
+    const tags = tagsMatch ? tagsMatch.map(tag => tag.replace(/`/g, '')) : [];
+    
     // Remove title from content and parse markdown
     const contentWithoutTitle = content.replace(/^#\s+.+$/m, '').trim();
     const html = marked(contentWithoutTitle);
@@ -63,11 +67,16 @@ function loadResources() {
       slug: file.replace('.md', ''),
       title,
       html,
+      tags,
+      rawContent: content,
     };
   }).sort((a, b) => a.title.localeCompare(b.title));
 }
 
 const resources = loadResources();
+
+// Get all unique tags
+const allTags = [...new Set(resources.flatMap(r => r.tags))].sort();
 ---
 
 <!DOCTYPE html>
@@ -301,6 +310,46 @@ const resources = loadResources();
     .no-resources .contribute-link:hover {
       transform: scale(1.05);
     }
+    .filter-section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .filter-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 1rem;
+    }
+    .filter-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .filter-tag {
+      padding: 0.5rem 1rem;
+      background: #f7fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+      color: #4a5568;
+    }
+    .filter-tag:hover {
+      background: #edf2f7;
+      border-color: #cbd5e0;
+    }
+    .filter-tag.active {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border-color: #667eea;
+    }
+    .filter-tag.all {
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -329,15 +378,61 @@ const resources = loadResources();
         </a>
       </div>
     ) : (
-      <div class="resources-grid">
-        {resources.map((resource) => (
-          <div class="resource-card">
-            <div class="resource-title">{resource.title}</div>
-            <div class="resource-content" set:html={resource.html} />
+      <>
+        {allTags.length > 0 && (
+          <div class="filter-section">
+            <div class="filter-title">🏷️ Filtrar por tag:</div>
+            <div class="filter-tags">
+              <button class="filter-tag all active" data-tag="all">Todos ({resources.length})</button>
+              {allTags.map(tag => {
+                const count = resources.filter(r => r.tags.includes(tag)).length;
+                return (
+                  <button class="filter-tag" data-tag={tag}>
+                    {tag} ({count})
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        ))}
-      </div>
+        )}
+        
+        <div class="resources-grid">
+          {resources.map((resource) => (
+            <div class="resource-card" data-tags={JSON.stringify(resource.tags)}>
+              <div class="resource-title">{resource.title}</div>
+              <div class="resource-content" set:html={resource.html} />
+            </div>
+          ))}
+        </div>
+      </>
     )}
   </div>
+
+  <script>
+    // Filter functionality
+    const filterTags = document.querySelectorAll('.filter-tag');
+    const resourceCards = document.querySelectorAll('.resource-card');
+
+    filterTags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        const selectedTag = tag.dataset.tag;
+        
+        // Update active state
+        filterTags.forEach(t => t.classList.remove('active'));
+        tag.classList.add('active');
+        
+        // Filter cards
+        resourceCards.forEach(card => {
+          const cardTags = JSON.parse(card.dataset.tags || '[]');
+          
+          if (selectedTag === 'all' || cardTags.includes(selectedTag)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

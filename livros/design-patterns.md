@@ -16,3 +16,7 @@
 O livro que definiu padrões de design em programação orientada a objetos.
 Fundamental para arquitetos e sêniors. Denso mas essencial.
 
+
+## Tags
+
+`design-patterns` `oop` `architecture` `software-engineering`

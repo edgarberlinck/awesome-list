@@ -16,3 +16,7 @@
 Uma edição atualizada de um livro clássico com conselhos práticos para
 desenvolvedores profissionais. Cobre tópicos modernos como DevOps e automação.
 
+
+## Tags
+
+`career` `best-practices` `software-engineering` `craftsmanship`

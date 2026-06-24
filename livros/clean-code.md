@@ -17,3 +17,7 @@ Um clássico essencial sobre como escrever código limpo, legível e manuteníve
 Apresenta técnicas práticas e padrões de refatoração que todo desenvolvedor
 deve conhecer.
 
+
+## Tags
+
+`clean-code` `best-practices` `refactoring` `software-engineering`

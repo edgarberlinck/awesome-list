@@ -16,3 +16,7 @@
 Guia prático sobre como melhorar código existente de forma segura.
 Exemplos em JavaScript e cobertura de técnicas modernas.
 
+
+## Tags
+
+`refactoring` `clean-code` `best-practices` `software-engineering`
