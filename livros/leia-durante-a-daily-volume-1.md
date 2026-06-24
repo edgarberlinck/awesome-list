@@ -1,4 +1,4 @@
-# Durante a Daily: Volume 1
+# Leia Durante a Daily: Volume 1
 
 **Author:** Edgar Muniz Berlinck
 **Year:** 2025
