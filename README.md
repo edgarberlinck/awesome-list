@@ -1,93 +1,52 @@
 # Tech Resources Hub 🚀
 
-Uma coleção curada de recursos tecnológicos para desenvolvedores em busca de aprendizado, comunidade e oportunidades.
+[![Deploy to GitHub Pages](https://github.com/edgarberlinck/awesome-list/actions/workflows/deploy.yml/badge.svg)](https://github.com/edgarberlinck/awesome-list/actions/workflows/deploy.yml)
+[![Markdown Lint](https://github.com/edgarberlinck/awesome-list/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/edgarberlinck/awesome-list/actions/workflows/markdown-lint.yml)
 
-## 📚 Categorias Disponíveis
+**🌐 [Acesse o site](https://edgarberlinck.github.io/awesome-list/)**
 
-### [📖 Livros](/livros)
+Uma coleção curada de recursos tecnológicos para desenvolvedores - construída pela comunidade, para a comunidade.
 
-Referências essenciais em desenvolvimento de software, arquitetura e melhores práticas.
+## 💡 Motivação
 
-**Estatísticas:** 5 livros | 4 idiomas
+O mercado de tecnologia está cheio de conteúdo disperso: livros, newsletters, comunidades, exercícios técnicos e até "freelas disfarçados" de teste técnico. Este projeto nasceu para:
 
-### [👥 Comunidades](/comunidades)
+- **Centralizar** recursos de qualidade em um só lugar
+- **Compartilhar** conhecimento de forma colaborativa
+- **Alertar** sobre práticas questionáveis no mercado
+- **Facilitar** o acesso a conteúdo relevante
 
-Espaços para networking, aprendizado colaborativo e troca de experiências.
+## 🎯 O que você encontra aqui
 
-**Estatísticas:** 5 comunidades | 3 plataformas
+- 📖 **Livros** - Referências essenciais em desenvolvimento
+- 👥 **Comunidades** - Espaços para networking e aprendizado
+- 💪 **Exercícios Técnicos** - Desafios propostos por empresas
+- 🎭 **Freelas Disfarçados** - Testes que pedem trabalho real
+- 📬 **Newsletters** - Conteúdo curado na sua caixa de entrada
 
-### [💪 Exercícios Técnicos](/exercicios-tecnicos)
+## 🤝 Contribuições
 
-Desafios de programação propostos por empresas para treinar habilidades.
+**Este site é construído pela comunidade!** Todos os recursos foram adicionados por desenvolvedores como você.
 
-**Estatísticas:** 5 exercícios | 8 tecnologias
+Quer adicionar um recurso? [Veja como contribuir](CONTRIBUTING.md)
 
-### [🎭 Freelas Disfarçados](/freelas-disfarcados)
+## 📢 Reclamações e Sugestões
 
-Testes técnicos que parecem desafios mas solicitam trabalho real sem compensação.
+- Encontrou algo errado? [Abra uma issue](https://github.com/edgarberlinck/awesome-list/issues/new)
+- Quer sugerir melhorias? [Abra uma issue](https://github.com/edgarberlinck/awesome-list/issues/new)
+- Tem dúvidas? [Abra uma discussion](https://github.com/edgarberlinck/awesome-list/discussions)
 
-**Estatísticas:** 3 casos documentados | Status: ativo/removido
+## 🛠️ Tecnologias
 
-## 🎯 Objetivo
+- [Astro](https://astro.build) - Framework para sites estáticos
+- [Markdown](https://www.markdownguide.org/) - Formato de conteúdo
+- [GitHub Pages](https://pages.github.com/) - Hospedagem
+- [GitHub Actions](https://github.com/features/actions) - CI/CD
 
-Este projeto documenta e organiza recursos tecnológicos para ajudar:
+## 📄 Licença
 
-- **Iniciantes** a encontrar bons materiais de aprendizado
-- **Desenvolvedores** a descobrir comunidades relevantes
-- **Profissionais** a treinar habilidades com exercícios reais
-- **Comunidade** a identificar oportunidades duvidosas
+MIT © 2024 - Este projeto é open source e construído pela comunidade.
 
-## 🤝 Como Contribuir
+---
 
-Consulte [CONTRIBUTING.md](CONTRIBUTING.md) para:
-
-- Como adicionar novos recursos
-- Formato esperado dos metadados
-- Processo de revisão
-- Convenções de nomenclatura
-
-## 📋 Processo de Validação
-
-Cada contribuição passa por:
-
-1. ✅ Validação de Front Matter YAML
-2. 🔗 Verificação de links
-3. 📝 Geração automática de documentação
-4. 👀 Revisão por maintainers
-
-## 🚀 Quick Start
-
-```bash
-# Instalar dependências
-npm install
-
-# Validar todos os recursos
-npm run validate
-
-# Verificar links
-npm run check-links
-
-# Gerar documentação
-npm run generate-docs
-
-# Executar pipeline completo
-npm run ci
-```
-
-## 📊 Estatísticas do Repositório
-
-- **Total de Recursos:** 18
-- **Última Atualização:** Automática via GitHub Actions
-- **Contribuidores:** Bem-vindo! 👋
-
-## 📝 Licença
-
-MIT © 2024 Edgar Berlinck
-
-## 🔗 Links Rápidos
-
-- [Ver Livros](/livros/README.md)
-- [Ver Comunidades](/comunidades/README.md)
-- [Ver Exercícios](/exercicios-tecnicos/README.md)
-- [Ver Freelas](/freelas-disfarcados/README.md)
-- [Contribuir](CONTRIBUTING.md)
+**⭐ Gostou?** Deixe uma estrela e compartilhe com outros devs!
