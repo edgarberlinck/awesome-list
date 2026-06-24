@@ -6,6 +6,8 @@ on:
       - '**.yml'
       - 'scripts/validate.js'
       - 'scripts/link-check.js'
+      - 'package.json'
+      - 'package-lock.json'
   push:
     branches:
       - main
@@ -13,6 +15,9 @@ on:
       - '**.yml'
       - 'scripts/validate.js'
       - 'scripts/link-check.js'
+      - 'package.json'
+      - 'package-lock.json'
+  workflow_dispatch:
 
 jobs:
   validate:
