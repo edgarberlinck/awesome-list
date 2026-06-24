@@ -1,0 +1,198 @@
+---
+import * as yaml from 'js-yaml';
+import fs from 'fs';
+import path from 'path';
+
+export async function getStaticPaths() {
+  return [
+    { params: { category: 'livros' } },
+    { params: { category: 'comunidades' } },
+    { params: { category: 'exercicios-tecnicos' } },
+    { params: { category: 'freelas-disfarcados' } },
+  ];
+}
+
+const { category } = Astro.params;
+
+const categoryConfig: Record<string, any> = {
+  'livros': {
+    title: '📖 Livros',
+    description: 'Referências essenciais em desenvolvimento de software',
+    fields: ['title', 'author', 'year', 'language', 'difficulty'],
+    labels: ['Título', 'Autor', 'Ano', 'Linguagem', 'Dificuldade'],
+  },
+  'comunidades': {
+    title: '👥 Comunidades',
+    description: 'Espaços para networking e aprendizado colaborativo',
+    fields: ['name', 'platform', 'language', 'focus'],
+    labels: ['Nome', 'Plataforma', 'Linguagem', 'Foco'],
+  },
+  'exercicios-tecnicos': {
+    title: '💪 Exercícios Técnicos',
+    description: 'Desafios de programação propostos por empresas',
+    fields: ['title', 'company', 'difficulty', 'technologies'],
+    labels: ['Título', 'Empresa', 'Dificuldade', 'Tecnologias'],
+  },
+  'freelas-disfarcados': {
+    title: '🎭 Freelas Disfarçados',
+    description: 'Testes que parecem desafios mas solicitam trabalho real',
+    fields: ['company', 'title', 'technologies', 'status'],
+    labels: ['Empresa', 'Título', 'Tecnologias', 'Status'],
+  },
+};
+
+const config = categoryConfig[category!];
+
+function loadResources() {
+  const categoryPath = path.join(process.cwd(), category!);
+  if (!fs.existsSync(categoryPath)) return [];
+  
+  const files = fs.readdirSync(categoryPath).filter(f => f.endsWith('.yml'));
+  
+  return files.map(file => {
+    const content = fs.readFileSync(path.join(categoryPath, file), 'utf-8');
+    return yaml.load(content);
+  }).sort((a: any, b: any) => {
+    const aTitle = a.title || a.name || a.company || '';
+    const bTitle = b.title || b.name || b.company || '';
+    return aTitle.localeCompare(bTitle);
+  });
+}
+
+const resources = loadResources();
+
+function formatValue(value: any): string {
+  if (Array.isArray(value)) return value.join(', ');
+  return String(value || '-');
+}
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{config.title} | Tech Resources Hub</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .description {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+    .stats {
+      background: #f5f7fa;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+    th {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    th:first-child {
+      border-radius: 10px 0 0 0;
+    }
+    th:last-child {
+      border-radius: 0 10px 0 0;
+    }
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    tr:hover {
+      background: #f9fafb;
+    }
+    .no-resources {
+      text-align: center;
+      padding: 3rem;
+      color: #999;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="back-link">← Voltar para home</a>
+    
+    <h1>{config.title}</h1>
+    <p class="description">{config.description}</p>
+    
+    <div class="stats">
+      📊 Total de recursos: {resources.length}
+    </div>
+
+    {resources.length === 0 ? (
+      <div class="no-resources">
+        Nenhum recurso adicionado ainda. Seja o primeiro a contribuir!
+      </div>
+    ) : (
+      <table>
+        <thead>
+          <tr>
+            {config.labels.map((label: string) => (
+              <th>{label}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {resources.map((resource: any) => (
+            <tr>
+              {config.fields.map((field: string) => (
+                <td>{formatValue(resource[field])}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
+  </div>
+</body>
+</html>

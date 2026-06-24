@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import matter from 'gray-matter';
+import * as yaml from 'js-yaml';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, '..');
@@ -58,7 +58,7 @@ function readFilesInCategory(categoryPath) {
   return files.map((file) => {
     const filePath = path.join(categoryPath, file);
     const content = fs.readFileSync(filePath, 'utf-8');
-    const { data } = matter(content);
+    const data = yaml.load(content);
     return { file, data };
   });
 }
@@ -73,7 +73,7 @@ function generateMarkdownTable(items, config) {
     const cells = config.fields.map((field) => {
       const value = item.data[field];
       const formatted = formatArray(value);
-      return formatted.substring(0, 50); // Truncate long values
+      return String(formatted).substring(0, 50); // Truncate long values
     });
     return `| ${cells.join(' | ')} |`;
   });
@@ -102,7 +102,7 @@ ${table}
 
 Para adicionar um novo recurso a esta categoria:
 
-1. Crie um arquivo `.yml` na pasta \`${categoryName}/\`
+1. Crie um arquivo \`.yml\` na pasta \`${categoryName}/\`
 2. Siga o formato esperado com todos os campos obrigatórios
 3. Abra um Pull Request
 4. Aguarde revisão
