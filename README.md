@@ -1,7 +1,5 @@
 # Tech Resources Hub 🚀
 
-[![Validate](https://github.com/edgarberlinck/awesome-list/actions/workflows/validate.yml/badge.svg)](https://github.com/edgarberlinck/awesome-list/actions/workflows/validate.yml)
-
 Uma coleção curada de recursos tecnológicos para desenvolvedores em busca de aprendizado, comunidade e oportunidades.
 
 ## 📚 Categorias Disponíveis

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!dist'"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.2.0",
@@ -15,5 +16,9 @@
     "gray-matter": "^4.0.3",
     "js-yaml": "^5.1.0",
     "marked": "^18.0.5"
+  },
+  "devDependencies": {
+    "markdownlint": "^0.41.0",
+    "markdownlint-cli2": "^0.22.1"
   }
 }

@@ -109,3 +109,34 @@ rm -rf node_modules .astro dist
 npm install
 npm run dev
 ```
+
+## Qualidade do Código
+
+### Markdown Lint
+
+O projeto usa markdownlint para garantir a qualidade dos arquivos Markdown.
+
+```bash
+# Instalar globalmente
+npm install -g markdownlint-cli2
+
+# Rodar o lint
+markdownlint-cli2 "**/*.md" "!node_modules" "!dist"
+```
+
+### Configuração
+
+As regras do markdownlint estão em `.markdownlint.json`:
+- Line length (MD013): desabilitada - permite linhas longas
+- HTML tags (MD033): permite algumas tags específicas
+- First line heading (MD041): desabilitada - flexível
+- Bare URLs (MD034): desabilitada - permite URLs sem markdown
+- Emphasis style (MD036): desabilitada - flexível
+
+### CI/CD
+
+O workflow `markdown-lint.yml` roda automaticamente em:
+- Pull Requests que modificam arquivos `.md`
+- Push na branch main com arquivos `.md`
+
+Se o lint falhar, o PR não poderá ser mergeado.
