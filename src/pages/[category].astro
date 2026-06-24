@@ -275,14 +275,31 @@ const resources = loadResources();
       border: 2px dashed #cbd5e0;
     }
     .no-resources::before {
-      content: '📭';
+      content: '🤷‍♂️';
       font-size: 4rem;
       display: block;
       margin-bottom: 1rem;
     }
     .no-resources p {
-      color: #718096;
-      font-size: 1.1rem;
+      color: #4a5568;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .no-resources .contribute-link {
+      display: inline-block;
+      margin-top: 2rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s ease;
+    }
+    .no-resources .contribute-link:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -303,7 +320,13 @@ const resources = loadResources();
   <div class="container">
     {resources.length === 0 ? (
       <div class="no-resources">
-        <p>Nenhum recurso adicionado ainda. Seja o primeiro a contribuir!</p>
+        <p>
+          <strong>Essa página não vai se alimentar sozinha.</strong><br />
+          É como dizem por aí: Quem sabe contribui, quem não sabe reclama.
+        </p>
+        <a href="https://github.com/edgarberlinck/awesome-list/blob/main/CONTRIBUTING.md" target="_blank" class="contribute-link">
+          📝 Seja o primeiro a contribuir
+        </a>
       </div>
     ) : (
       <div class="resources-grid">
