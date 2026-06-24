@@ -9,6 +9,7 @@ export async function getStaticPaths() {
     { params: { category: 'comunidades' } },
     { params: { category: 'exercicios-tecnicos' } },
     { params: { category: 'freelas-disfarcados' } },
+    { params: { category: 'newsletters' } },
   ];
 }
 
@@ -30,6 +31,10 @@ const categoryConfig: Record<string, any> = {
   'freelas-disfarcados': {
     title: '🎭 Freelas Disfarçados',
     description: 'Testes que parecem desafios mas solicitam trabalho real',
+  },
+  'newsletters': {
+    title: '📬 Newsletters',
+    description: 'Conteúdo curado direto na sua caixa de entrada',
   },
 };
 
