@@ -6,7 +6,7 @@
 
 ## Sobre
 
-Textos ácidos sobre o mundo corporativo e carreira técnica. Essa newsletter tem o compromisso em te falar a verdade, não te deixar feliz. 
+Textos ácidos sobre o mundo corporativo e carreira técnica. Essa newsletter tem o compromisso em te falar a verdade, não te deixar feliz.
 
 Mas sorria, a verdade às vezes te liberta! 💀
 
