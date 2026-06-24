@@ -1,4 +1,4 @@
-# Release It!
+# Release It
 
 **Author:** Michael T. Nygard
 **Year:** 2007
