@@ -242,7 +242,11 @@ function getResourceCount(categorySlug: string): number {
           <span class="category-icon">{cat.icon}</span>
           <div class="category-title">{cat.title}</div>
           <div class="category-description">{cat.description}</div>
-          <div class="category-count">{getResourceCount(cat.slug)} recursos</div>
+          <div class="category-count">
+            {getResourceCount(cat.slug) === 0 
+              ? 'Nenhum recurso ainda. Tá aí sua chance de ser o primeiro.' 
+              : `${getResourceCount(cat.slug)} recursos`}
+          </div>
           <span class="badge">Explorar</span>
         </a>
       ))}
